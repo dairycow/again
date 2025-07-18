@@ -87,9 +87,3 @@ code {
 .post-list li:last-child {
     border-bottom: none;
 }
-
-.post-meta {
-    color: #000;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
