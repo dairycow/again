@@ -3,23 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>again</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>My Blog</h1>
-        <p>A minimalist blog built with HTML and CSS</p>
+        <h1>again</h1>
     </header>
     
     <main>
-        <ul class="post-list">
-            <li>
-                <h2><a href="posts/first">My First Post</a></h2>
+        <div class="post-list">
+            <article class="post-excerpt">
+                <h2><a href="posts/first.html">first</a></h2>
+                <time datetime="2025-07-19">2025-07-19</time>
                 <p>Welcome to my minimalist blog! This is my first post using just HTML and CSS.</p>
-                <div class="post-meta">July 19, 2025</div>
-            </li>
-        </ul>
+            </article>
+            
+            <article class="post-excerpt">
+                <h2><a href="posts/second.html">building momentum</a></h2>
+                <time datetime="2025-07-20">2025-07-20</time>
+                <p>The second post is always harder than the first. The initial excitement has worn off, and now it's about building consistent habits.</p>
+            </article>
+            
+            <article class="post-excerpt">
+                <h2><a href="posts/third.html">finding rhythm</a></h2>
+                <time datetime="2025-07-21">2025-07-21</time>
+                <p>Three posts in and I'm starting to find a rhythm. There's something satisfying about the simplicity of this approach.</p>
+            </article>
+        </div>
+        
+        <div class="read-all">
+            <a href="posts/all.html" class="read-all-btn">read all posts</a>
+        </div>
     </main>
 </body>
 </html>
