@@ -139,7 +139,7 @@ cat > posts/all.html << 'HTML'
 </head>
 <body>
     <nav>
-        <a href="../">Back</a>
+        <a href="../">home</a>
     </nav>
     
 HTML
