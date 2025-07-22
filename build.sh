@@ -104,17 +104,15 @@ HTML
 
 # Process each post file (sorted by date, newest first)
 for post in $(get_sorted_posts); do
-    # Extract title, date, and first paragraph
+    # Extract title and date
     title=$(grep -o '<h1>.*</h1>' "$post" | sed 's/<[^>]*>//g')
     date=$(get_post_date "$post")
-    first_p=$(grep -o '<p>.*</p>' "$post" | head -1 | sed 's/<[^>]*>//g')
     filename=$(basename "$post")
     
     cat >> index.html << HTML
             <article class="post-excerpt">
                 <h2><a href="posts/$filename">$title</a></h2>
-                <time datetime="$date">$(date -d "$date" "+%B %d, %Y" 2>/dev/null || echo "$date")</time>
-                <p>$first_p</p>
+                <time datetime="$date">$date</time>
             </article>
             
 HTML
