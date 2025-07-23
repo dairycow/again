@@ -15,10 +15,10 @@ jobs:
     - name: Build blog pages
       run: ./build.sh
     
-    - name: Commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add --force index.html posts/all.html
-        git diff --staged --quiet || git commit -m "Auto-build blog pages"
-        git push
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
+        publish_branch: gh-pages
+        keep_files: false
