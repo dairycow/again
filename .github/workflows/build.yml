@@ -15,10 +15,18 @@ jobs:
     - name: Build blog pages
       run: ./build.sh
     
+    - name: Prepare deployment directory
+      run: |
+        mkdir -p deploy
+        cp index.html deploy/
+        cp posts/all.html deploy/posts/
+        cp style.css deploy/
+        cp -r posts/*.html deploy/posts/ 2>/dev/null || true
+    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+        publish_dir: deploy
         publish_branch: gh-pages
         keep_files: false
