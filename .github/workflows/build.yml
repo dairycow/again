@@ -17,11 +17,11 @@ jobs:
     
     - name: Prepare deployment directory
       run: |
-        mkdir -p deploy
+        mkdir -p deploy/posts
         cp index.html deploy/
         cp posts/all.html deploy/posts/
         cp style.css deploy/
-        cp -r posts/*.html deploy/posts/ 2>/dev/null || true
+        cp posts/*.html deploy/posts/ 2>/dev/null || true
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
